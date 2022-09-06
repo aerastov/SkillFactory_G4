@@ -20,7 +20,8 @@
 После установки docker, загружаем проект командой:  
 `git clone https://github.com/aerastov/SkillFactory_G4.git`  
 В командной строке, переходим в директорию проекта и набираем:  
-`sudo docker-compose up -d`  
+`sudo docker-compose up -d`  //В среде lunix
+`docker-compose up -d` //Docker Desktop (Windows или Macos)
 После завершения установки и запуска контейнеров, заходим в браузере по адресу:  
 (в случае не запуска какого-либо контейнера, запустить его в ручную)
 http://localhost:1337  
