@@ -34,4 +34,4 @@ http://localhost:1337/admin
 Автор проекта: **Ерастов Алексей Сергеевич**  
 e-mail: a.erastov@gmail.com  
 Группа SkillFactory: FPW-36  
-Москва, октябрь 2021г.
+Москва, сентябрь 2022г.
