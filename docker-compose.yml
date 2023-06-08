@@ -3,7 +3,7 @@ version: '3.9'
 services:
 
   db:
-    image: postgres
+    image: postgres:15.3
     container_name: postgres_db
     restart: on-failure
     volumes:
