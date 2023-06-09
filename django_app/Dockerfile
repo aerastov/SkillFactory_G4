@@ -21,3 +21,4 @@ RUN mkdir /usr/src/app/static
 RUN mkdir /usr/src/app/media
 # copy project
 COPY . .
+

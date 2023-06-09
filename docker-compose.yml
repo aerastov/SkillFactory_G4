@@ -26,7 +26,12 @@ services:
     build: ./django_app
     container_name: django
     restart: on-failure
-    command: gunicorn django_app.wsgi:application --bind 0.0.0.0:8000
+    command: sh -c "python manage.py migrate && python manage.py createsuperuser --noinput && gunicorn django_app.wsgi:application --bind 0.0.0.0:8000"
+    environment:
+      - DJANGO_SUPERUSER_USERNAME=admin
+      - DJANGO_SUPERUSER_PASSWORD=admin
+      - DJANGO_SUPERUSER_EMAIL=admin@example.com
+#    command: gunicorn django_app.wsgi:application --bind 0.0.0.0:8000
 #    command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - ./django_app/:/usr/src/app/
@@ -39,8 +44,8 @@ services:
     env_file:
       - ./.env.dev
     depends_on:
-      db:
-        condition: service_healthy
+      - db
+#        condition: service_healthy
   nginx:
     build: ./nginx
     container_name: nginx
